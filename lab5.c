@@ -52,55 +52,86 @@ struct StudentInfo
     printf("\n3) Insert node at front of list.\n");
     printf("\n4) Insert node in middle of list.\n");
     printf("\n5) Insert node at end of list.\n");
-    printf("\n6) Insert node at end of list.\n");
-    printf("\n7) Insert node at end of list.\n");
-    printf("\n8) Insert node at end of list.\n");
-    printf("\n9) Insert node at end of list.\n");
-    printf("\n10) Insert node at end of list.\n");
+    printf("\n6) Delete first node of list.\n");
+    printf("\n7) Delete middle node of list.\n");
+    printf("\n8) Delete node at end of list.\n");
+    printf("\n9) Traverse list.\n");
+    printf("\n10) Look up node by index.\n");
     printf("\n11) Exit\n\n");
     printf("Your Choice: ");
     scanf(" %d", &user_choice);       
 
 
-    /*BUBBLE SORT SECTION*/
+    /*Create a list SECTION*/
     
     if(user_choice == 1) {
-      printf("\nBubble Sort\n\n");
-      call_bubble_sort ();      
+      printf("\nCreate a list with no nodes.\n\n");
+      create_list_no_nodes();      
     }
-    /*SELECTION SORT SECTION*/
+    /*Create a list with a single node SECTION*/
     
     else if(user_choice == 2) {
-      printf("\nSelection Sort\n\n");
-      call_selection_sort (); 
+      printf("\nCreate a list with a single node.\n\n");
+      create_list_node();
     }    
-    /*INSERTION SORT SECTION*/
+    /*Insert node at front SECTION*/
     
     else if(user_choice == 3) {
-      printf("\n\n\nInsertion Sort\n");
-      call_insertion_sort ();
+      printf("\n\n\nInsert node at front of list.\n");
+      insert_front();
     }    
-    /*LINEAR SEARCH SECTION*/ 
+    /*Insert node in middle of list SECTION*/ 
        
     else if(user_choice == 4){
-    printf("\n\n\nLinear Search\n");
-    call_linear_search ();
+    printf("\n\n\nInsert node in middle of list.\n");
+    insert_middle();
     }      
-    /*BINARY SEARCH SECTION*/
+    /*Insert node at end of list SECTION*/
 
     else if(user_choice == 5){
-      printf("\n\n\nBinary Search\n");
-      call_binary_search ();
+      printf("\n\n\nInsert node at end of list.\n");
+      insert_end();
       }
+    /*Delete first node of list SECTION*/
+
+  else if(user_choice == 6){
+    printf("\n\n\nDelete first node of list.\n");
+    delete_front();
+    }
+    /*Delete middle node of list SECTION*/
+
+    else if(user_choice == 7){
+      printf("\n\n\nDelete middle node of list.\n");
+      delete_middle();
+      }
+    /*Delete node at end of list SECTION*/
+
+    else if(user_choice == 8){
+      printf("\n\n\nDelete node at end of list.\n");
+      delete_end();
+      }
+    /*Traverse list SECTION*/
+
+    else if(user_choice == 9){
+      printf("\n\n\nTraverse list.\n");
+      traverse();
+      }
+    /*Look up node by index SECTION*/
+
+    else if(user_choice == 10){
+      printf("\n\n\nLook up node by index.\n");
+      look_up_by_index();
+       }  
+         
     /*END CHOICE SECTION*/
-    else if(user_choice == 6){
+    else if(user_choice == 11){
       printf("\nThank you for using my program!!\n\n");
       return 0;
     }
     else{
       printf("Invalid Choice");
     }
-  } while (user_choice != 6); 
+  } while (user_choice != 11); 
   
   return 0;
   }
