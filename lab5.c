@@ -13,34 +13,38 @@
 /* Includes */
 #include <stdio.h>
 #include <stdlib.h>
+
+
 #define FIRSTNAME 15
 #define LASTNAME 25
 #define PUID 10
 #define AGE 2
 
 /* Function Prototypes */
-create_list_no_nodes();
-create_list_node();
-insert_front();
-insert_middle();
-insert_end();
-delete_front();
-delete_middle();
-delete_end();
-traverse();
-look_up_by_index();
+void create_list_no_nodes();
+void create_list_node();
+void insert_front();
+void insert_middle();
+void insert_end();
+void delete_front();
+void delete_middle();
+void delete_end();
+void traverse();
+void look_up_by_index();
+void display_list();
 
-
-/* Function: main()*/
-
-struct StudentInfo
-{
+struct StudentInfo{
   char first_name[FIRSTNAME];
   char last_name[LASTNAME];
   char ID[PUID];
   char age[AGE];
   struct StudentInfo *nextaddr;
-  };
+  }*start=NULL;
+
+/* Function: main()*/
+
+int user_choice;
+
   
   int main()
   {
@@ -136,7 +140,45 @@ struct StudentInfo
   return 0;
   }
     
+void create_list_no_nodes()
+{
 
+}
   
-  
-  
+void create_list_node()
+{
+struct StudentInfo *new_node, *current;
+new_node = (struct StudentInfo *)malloc(sizeof(struct StudentInfo));
+
+printf("/nEnter Student's First Name: ");
+scanf("%s", &new_node->first_name);
+printf("/nEnter Student's Last Name: ");
+scanf("%s", &new_node->last_name);
+printf("/nEnter Student's PU ID: ");
+scanf("%s", &new_node->ID);
+printf("/nEnter Student's Age: ");
+scanf("%s", &new_node->age);
+new_node->nextaddr=NULL;
+
+if (start==NULL)
+{
+start = new_node;
+current=new_node;
+}
+else
+{
+current->nextaddr=new_node;
+current=new_node;
+}
+display_list(start);
+}  
+
+
+void display_list(struct StudentInfo *contents)
+{
+  while (contents !=NULL)
+  {
+    printf("%-30s %-20s %-10s %s \n" contents->first_name, contents->last_name, contents->ID, contents->age);
+    contents = contents->nextaddr;
+    }
+    }  
