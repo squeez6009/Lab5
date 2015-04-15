@@ -204,7 +204,7 @@ struct StudentInfo new_node;
       gets(stuage);
       strcpy(new_node.age, stuage); 
       
-      return new_node;
+      return 0;
 }
 
 

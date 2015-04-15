@@ -35,14 +35,13 @@ void look_up_by_index();
 void collect_data();
 void display_list();
 
-struct StudentInfo{
+typdef struct StudentInfo{
   char first_name[FIRSTNAME];
   char last_name[LASTNAME];
   char ID[PUID];
   char age[AGE];
   struct StudentInfo *nextaddr;
-  }*start=NULL;
-
+  }StudentInfo;
 /* Function: main()*/
 
 int user_choice;
@@ -144,7 +143,7 @@ int user_choice;
     
 
   
-/*void create_list_node(*new)
+StudentInfo *create_list_node(StudentInfo *previous)
 {
 struct StudentInfo *new, *current;
 new = (struct StudentInfo *)malloc(sizeof(struct StudentInfo));
@@ -181,7 +180,9 @@ display_list(start);
 
 void collect_data(){
 
-struct StudentInfo new_node;
+struct StudentInfo *start = NULL;
+struct StudentInfo *newest = NULL;
+
     char fname[15];
     char lname[25];
     char pid[10];
